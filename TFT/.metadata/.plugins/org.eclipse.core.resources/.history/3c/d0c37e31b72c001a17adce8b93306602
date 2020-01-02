@@ -1,0 +1,692 @@
+package application;
+
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+
+import org.eclipse.swt.events.ShellEvent;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.wb.swt.SWTResourceManager;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.GridData;
+
+
+public class EquipmentTable {
+
+
+
+	protected Shell shlEquipmentsTable;
+	protected boolean visible = false;
+	
+	protected String[] baseEq  = {"[tftactics.gg][919]BFSword.png", "[tftactics.gg][12]NeedlesslyLargeRod.png", " [tftactics.gg][826]RecurveBow.png"
+			, "[tftactics.gg][220]TearoftheGoddess.png", "[tftactics.gg][70]ChainVest.png","[tftactics.gg][875]NegatronCloak.png",
+			"[tftactics.gg][244]GiantsBelt.png", "[tftactics.gg][626]SparringGloves.png","[tftactics.gg][887]Spatula.png"};
+	
+	protected boolean tflag[],lflag[];
+	
+	/*
+	protected String[][] comEq= {{"[tftactics.gg][979]Deathblade.png"},
+						{"[tftactics.gg][882]HextechGunblade.png"},
+						{"[tftactics.gg][559]GiantSlayer.png"},
+						{"[tftactics.gg][102]SpearofShojin.png"},
+						{"[tftactics.gg][873]GuardianAngel.png"},
+						{"[tftactics.gg][360]Bloodthirster.png"},
+						{"[tftactics.gg][323]ZekesHerald.png"},
+						{"[tftactics.gg][222]InfinityEdge.png"},
+						{"[tftactics.gg][140]YoumuusGhostblade.png"}
+			
+						
+						};
+	
+8*/
+	
+	/**
+	 * Launch the application.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		try {
+			EquipmentTable window = new EquipmentTable();
+			window.open();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+
+
+	}
+	
+	protected void Update()
+	{}
+	
+	/**
+	 * Open the window.
+	 */
+	public void open() {
+		Display display = Display.getDefault();
+		createContents();
+
+		shlEquipmentsTable.open();
+
+		shlEquipmentsTable.layout();
+		while (!shlEquipmentsTable.isDisposed()) {
+			if (!display.readAndDispatch()) {
+				display.sleep();
+			}
+		}
+		display.dispose();
+
+	}
+
+
+	//set the window dispose or not
+	public void disAppear(){      
+
+		
+		shlEquipmentsTable.setVisible(false); 
+		visible = false;	
+	}
+
+	public void appear()	{
+		
+		shlEquipmentsTable.setVisible(true);
+		visible = true;
+	}
+
+
+	/**
+	 * Create contents of the window.
+	 */
+	protected void createContents() {
+
+
+		//allocate the flag
+				tflag =new boolean [9];
+				lflag = new boolean [9];
+				
+				for(int i =0 ;i<9;i++){
+					tflag[i]=false;
+					lflag[i]=false;
+							
+				}
+		
+		
+		
+		
+		shlEquipmentsTable = new Shell(SWT.ON_TOP|SWT.RESIZE|SWT.CLOSE);
+		appear();
+		shlEquipmentsTable.addShellListener(new ShellAdapter() {
+
+
+			public void shellClosed(ShellEvent e) {
+				disAppear();
+			
+				e.doit = false; 
+			}
+		});
+		shlEquipmentsTable.setSize(590, 590);
+		shlEquipmentsTable.setText("Equipments Table");
+		shlEquipmentsTable.setLayout(new FillLayout(SWT.HORIZONTAL));
+		
+		Composite composite = new Composite(shlEquipmentsTable, SWT.NONE);
+		composite.setLayout(new GridLayout(10, false));
+		new Label(composite, SWT.NONE);
+		
+		Button tb1 = new Button(composite, SWT.NONE);
+		tb1.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (tflag[0] == false) {
+					tb1.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][919]BFSword.png"));
+					tflag[0] = true;					
+				}
+				else {					
+					tb1.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][919]BFSword.png"));
+					tflag[0] = false;
+				}
+				Update();
+
+			}
+		});
+		tb1.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][919]BFSword.png"));
+		tb1.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button tb2 = new Button(composite, SWT.NONE);
+		tb2.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (tflag[1] == false) {
+					tb2.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][12]NeedlesslyLargeRod.png"));
+					tflag[1] = true;					
+				}
+				else {					
+					tb2.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][12]NeedlesslyLargeRod.png"));
+					tflag[1] = false;
+				}
+				Update();
+			}
+		});
+		tb2.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][12]NeedlesslyLargeRod.png"));
+		tb2.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button tb3 = new Button(composite, SWT.NONE);
+		tb3.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (tflag[2] == false) {
+					tb3.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][826]RecurveBow.png"));
+					tflag[2] = true;					
+				}
+				else {					
+					tb3.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][826]RecurveBow.png"));
+					tflag[2] = false;
+				}
+				Update();
+				
+			}
+		});
+		tb3.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][826]RecurveBow.png"));
+		tb3.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button tb4 = new Button(composite, SWT.NONE);
+		tb4.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (tflag[3] == false) {
+					tb4.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][220]TearoftheGoddess.png"));
+					tflag[3] = true;					
+				}
+				else {					
+					tb4.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][220]TearoftheGoddess.png"));
+					tflag[3] = false;
+				}
+				Update();
+			}
+		});
+		tb4.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][220]TearoftheGoddess.png"));
+		tb4.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button tb5 = new Button(composite, SWT.NONE);
+		tb5.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (tflag[4] == false) {
+					tb5.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][70]ChainVest.png"));
+					tflag[4] = true;					
+				}
+				else {					
+					tb5.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][70]ChainVest.png"));
+					tflag[4] = false;
+				}
+				Update();
+				
+			}
+		});
+		tb5.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][70]ChainVest.png"));
+		tb5.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button tb6 = new Button(composite, SWT.NONE);
+		tb6.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (tflag[5] == false) {
+					tb6.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][875]NegatronCloak.png"));
+					tflag[5] = true;					
+				}
+				else {					
+					tb6.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][875]NegatronCloak.png"));
+					tflag[5] = false;
+				}
+				Update();
+			}
+		});
+		
+	
+		tb6.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][875]NegatronCloak.png"));
+		tb6.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button tb7 = new Button(composite, SWT.NONE);
+		tb7.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (tflag[6] == false) {
+					tb7.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][244]GiantsBelt.png"));
+					tflag[6] = true;					
+				}
+				else {					
+					tb7.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][244]GiantsBelt.png"));
+					tflag[6] = false;
+				}
+				Update();
+			}
+		});
+		tb7.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][244]GiantsBelt.png"));
+		tb7.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button tb8 = new Button(composite, SWT.NONE);
+		tb8.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (tflag[7] == false) {
+					tb8.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][626]SparringGloves.png"));
+					tflag[7] = true;					
+				}
+				else {					
+					tb8.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][626]SparringGloves.png"));
+					tflag[7] = false;
+				}
+				Update();
+			}
+		});
+		
+		tb8.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][626]SparringGloves.png"));
+		tb8.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button tb9 = new Button(composite, SWT.NONE);
+		tb9.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (tflag[8] == false) {
+					tb9.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][887]Spatula.png"));
+					tflag[8] = true;					
+				}
+				else {					
+					tb9.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][887]Spatula.png"));
+					tflag[8] = false;
+				}
+				Update();
+			}
+		});
+		
+		tb9.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][887]Spatula.png"));
+		tb9.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button b1 = new Button(composite, SWT.NONE);
+		b1.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (lflag[0] == false) {
+					b1.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][919]BFSword.png"));
+					lflag[0] = true;					
+				}
+				else {					
+					b1.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][919]BFSword.png"));
+					lflag[0] = false;
+				}
+				Update();
+			}
+		});
+		
+		b1.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][919]BFSword.png"));
+		b1.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button b00 = new Button(composite, SWT.NONE);
+		b00.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][979]Deathblade.png"));
+		b00.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_9 = new Button(composite, SWT.NONE);
+		button_9.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][2]DragonsClaw.png"));
+		button_9.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		new Label(composite, SWT.NONE);
+		
+		Button button_1 = new Button(composite, SWT.NONE);
+		button_1.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][102]SpearofShojin.png"));
+		button_1.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_33 = new Button(composite, SWT.NONE);
+		button_33.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][845]Hush.png"));
+		button_33.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		
+		Button b2 = new Button(composite, SWT.NONE);
+		b2.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (lflag[1] == false) {
+					b2.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][12]NeedlesslyLargeRod.png"));
+					lflag[1] = true;					
+				}
+				else {					
+					b2.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][12]NeedlesslyLargeRod.png"));
+					lflag[1] = false;
+				}
+				Update();
+			}
+		});
+		
+		b2.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][12]NeedlesslyLargeRod.png"));
+		b2.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_38 = new Button(composite, SWT.NONE);
+		button_38.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][882]HextechGunblade.png"));
+		button_38.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_10 = new Button(composite, SWT.NONE);
+		button_10.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][311]BerserkerAxe.png"));
+		button_10.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_24 = new Button(composite, SWT.NONE);
+		button_24.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][404]LudensEcho.png"));
+		button_24.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_25 = new Button(composite, SWT.NONE);
+		button_25.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][635]RapidFirecannon.png"));
+		button_25.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_34 = new Button(composite, SWT.NONE);
+		button_34.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][856]TitanicHydra.png"));
+		button_34.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		
+		Button b3 = new Button(composite, SWT.NONE);
+		b3.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (lflag[2] == false) {
+					b3.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][826]RecurveBow.png"));
+					lflag[2] = true;					
+				}
+				else {					
+					b3.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][826]RecurveBow.png"));
+					lflag[2] = false;
+				}
+				Update();
+			}
+		});
+		b3.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][826]RecurveBow.png"));
+		b3.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_2 = new Button(composite, SWT.NONE);
+		button_2.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][108]GuinsoosRageblade.png"));
+		button_2.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_11 = new Button(composite, SWT.NONE);
+		button_11.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][329]IonicSpark.png"));
+		button_11.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_23 = new Button(composite, SWT.NONE);
+		button_23.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][482]Quicksilver.png"));
+		button_23.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_26 = new Button(composite, SWT.NONE);
+		button_26.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][718]JeweledGauntlet.png"));
+		button_26.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_35 = new Button(composite, SWT.NONE);
+		button_35.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][863]Zephyr.png"));
+		button_35.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		
+		Button b4 = new Button(composite, SWT.NONE);
+		b4.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (lflag[3] == false) {
+					b4.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][220]TearoftheGoddess.png"));
+					lflag[3] = true;					
+				}
+				else {					
+					b4.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][220]TearoftheGoddess.png"));
+					lflag[3] = false;
+				}
+				Update();
+			}
+		});
+		b4.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][220]TearoftheGoddess.png"));
+		b4.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_3 = new Button(composite, SWT.NONE);
+		button_3.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][323]ZekesHerald.png"));
+		button_3.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_12 = new Button(composite, SWT.NONE);
+		button_12.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][330]RedBuff.png"));
+		button_12.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_22 = new Button(composite, SWT.NONE);
+		button_22.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][492]ThiefsGloves.png"));
+		button_22.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_27 = new Button(composite, SWT.NONE);
+		button_27.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][721]RepeatingCrossbow.png"));
+		button_27.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_36 = new Button(composite, SWT.NONE);
+		button_36.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][871]RabadonsDeathcap.png"));
+		button_36.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		
+		Button b5 = new Button(composite, SWT.NONE);
+		b5.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (lflag[4] == false) {
+					b5.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][70]ChainVest.png"));
+					lflag[4] = true;					
+				}
+				else {					
+					b5.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][70]ChainVest.png"));
+					lflag[4] = false;
+				}
+				Update();
+			}
+		});
+		b5.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][70]ChainVest.png"));
+		b5.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_4 = new Button(composite, SWT.NONE);
+		button_4.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][140]YoumuusGhostblade.png"));
+		button_4.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_13 = new Button(composite, SWT.NONE);
+		button_13.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][355]FrozenMallet.png"));
+		button_13.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_21 = new Button(composite, SWT.NONE);
+		button_21.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][524]SeraphsEmbrace.png"));
+		button_21.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_28 = new Button(composite, SWT.NONE);
+		button_28.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][761]MagesCap.png"));
+		button_28.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_37 = new Button(composite, SWT.NONE);
+		button_37.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][873]GuardianAngel.png"));
+		button_37.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		
+		Button b6 = new Button(composite, SWT.NONE);
+		b6.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (lflag[5] == false) {
+					b6.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][875]NegatronCloak.png"));
+					lflag[5] = true;					
+				}
+				else {					
+					b6.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][875]NegatronCloak.png"));
+					lflag[5] = false;
+				}
+				Update();
+			}
+		});
+		
+		b6.setLayoutData(new GridData(SWT.LEFT, SWT.BOTTOM, false, false, 1, 1));
+		b6.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][875]NegatronCloak.png"));
+		b6.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_5 = new Button(composite, SWT.NONE);
+		button_5.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][167]Morellonomicon.png"));
+		button_5.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_14 = new Button(composite, SWT.NONE);
+		button_14.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][360]Bloodthirster.png"));
+		button_14.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_20 = new Button(composite, SWT.NONE);
+		button_20.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][559]GiantSlayer.png"));
+		button_20.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_29 = new Button(composite, SWT.NONE);
+		button_29.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][803]ForceofNature.png"));
+		button_29.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		
+		Button b7 = new Button(composite, SWT.NONE);
+		b7.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (lflag[6] == false) {
+					b7.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][244]GiantsBelt.png"));
+					lflag[6] = true;					
+				}
+				else {					
+					b7.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][244]GiantsBelt.png"));
+					lflag[6] = false;
+				}
+				Update();
+			}
+		});
+		b7.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][244]GiantsBelt.png"));
+		b7.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_6 = new Button(composite, SWT.NONE);
+		button_6.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][222]InfinityEdge.png"));
+		button_6.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_15 = new Button(composite, SWT.NONE);
+		button_15.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][377]TrapClaw.png"));
+		button_15.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_19 = new Button(composite, SWT.NONE);
+		button_19.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][571]InfernoCinder.png"));
+		button_19.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_30 = new Button(composite, SWT.NONE);
+		button_30.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][833]LocketoftheIronSolari.png"));
+		button_30.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_39 = new Button(composite, SWT.NONE);
+		button_39.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][8]WarmogsArmor.png"));
+		button_39.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		
+		Button b8 = new Button(composite, SWT.NONE);
+		b8.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (lflag[7] == false) {
+					b8.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][626]SparringGloves.png"));
+					lflag[7] = true;					
+				}
+				else {					
+					b8.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][626]SparringGloves.png"));
+					lflag[7] = false;
+				}
+				Update();
+			}
+		});
+		
+		b8.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][626]SparringGloves.png"));
+		b8.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_7 = new Button(composite, SWT.NONE);
+		button_7.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][232]PhantomDancer.png"));
+		button_7.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_16 = new Button(composite, SWT.NONE);
+		button_16.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][40]FrozenHeart.png"));
+		button_16.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_18 = new Button(composite, SWT.NONE);
+		button_18.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][598]RunaansHurricane.png"));
+		button_18.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_31 = new Button(composite, SWT.NONE);
+		button_31.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][833]TalismanofLight.png"));
+		button_31.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_40 = new Button(composite, SWT.NONE);
+		button_40.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][913]HandofJustice.png"));
+		button_40.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		
+		Button b9 = new Button(composite, SWT.NONE);
+		b9.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (lflag[8] == false) {
+					b9.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/b/[tftactics.gg][887]Spatula.png"));
+					lflag[8] = true;					
+				}
+				else {					
+					b9.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][887]Spatula.png"));
+					lflag[8] = false;
+				}
+				Update();
+			}
+		});
+		b9.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][887]Spatula.png"));
+		b9.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_8 = new Button(composite, SWT.NONE);
+		button_8.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][28]SwordBreaker.png"));
+		button_8.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button = new Button(composite, SWT.NONE);
+		button.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][445]Redemption.png"));
+		button.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_17 = new Button(composite, SWT.NONE);
+		button_17.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][610]StatikkShiv.png"));
+		button_17.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_32 = new Button(composite, SWT.NONE);
+		button_32.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][83]WardensMail.png"));
+		button_32.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_41 = new Button(composite, SWT.NONE);
+		button_41.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][93]BladeoftheRuinedKing.png"));
+		button_41.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		
+		Button button_42 = new Button(composite, SWT.NONE);
+		button_42.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][969]IceborneGauntlet.png"));
+		button_42.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+		new Label(composite, SWT.NONE);
+
+
+	}
+}

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TFT
+Bundle-SymbolicName: TFT
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: TFT
+Bundle-RequiredExecutionEnvironment: JavaSE-12
+Require-Bundle: org.eclipse.swt;bundle-version="3.112.0",
+ org.eclipse.jface;bundle-version="3.17.0"

@@ -1,0 +1,204 @@
+
+				if(lflag[0]&&tflag[8])
+					b08.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][140]YoumuusGhostblade.png"));
+				else 
+					b08.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][140]YoumuusGhostblade.png"));
+
+				if(lflag[0]&&tflag[7])
+					b07.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][222]InfinityEdge.png"));
+				else
+					b07.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][222]InfinityEdge.png"));
+
+				if(lflag[0]&&tflag[6])
+					b06.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][323]ZekesHerald.png"));
+				else 
+					b06.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][323]ZekesHerald.png"));
+
+				if(lflag[0]&&tflag[5])
+					b05.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][360]Bloodthirster.png"));
+				else 
+					b05.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][360]Bloodthirster.png"));
+
+
+				if(lflag[0]&&tflag[4])
+					b04.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][873]GuardianAngel.png"));
+				else 
+					b04.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][873]GuardianAngel.png"));
+
+				if(lflag[0]&&tflag[3])
+					b03.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][102]SpearofShojin.png"));
+				else 
+					b03.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][102]SpearofShojin.png"));
+
+
+				if(lflag[0]&&tflag[2])
+					b02.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][559]GiantSlayer.png"));
+				else 
+					b02.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][559]GiantSlayer.png"));
+
+				if(lflag[0]&&tflag[1])
+					b01.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][882]HextechGunblade.png"));
+				else 
+					b01.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][882]HextechGunblade.png"));
+
+				if(lflag[0]&&tflag[0])
+					b00.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][979]Deathblade.png"));
+				else 
+					b00.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][979]Deathblade.png"));
+	
+		
+				
+				if(lflag[1]&&tflag[7])
+					b17.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][718]JeweledGauntlet.png"));
+				else 
+					b17.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][718]JeweledGauntlet.png"));
+
+				if(lflag[1]&&tflag[6])
+					b16.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][167]Morellonomicon.png"));
+				else 
+					b16.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][167]Morellonomicon.png"));
+
+				if(lflag[1]&&tflag[5])
+					b15.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][329]IonicSpark.png"));
+				else 
+					b15.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][329]IonicSpark.png"));
+				if(lflag[1]&&tflag[4])
+					b14.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][833]LocketoftheIronSolari.png"));
+				else 
+					b14.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][833]LocketoftheIronSolari.png"));
+				if(lflag[1]&&tflag[3])
+					b13.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][404]LudensEcho.png"));
+				else 
+					b13.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][404]LudensEcho.png"));
+				if(lflag[1]&&tflag[2])
+					b12.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][108]GuinsoosRageblade.png"));
+				else
+					b12.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][108]GuinsoosRageblade.png"));
+
+				if(lflag[1]&&tflag[1])
+					b11.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][871]RabadonsDeathcap.png"));
+				else 
+					b11.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][871]RabadonsDeathcap.png"));
+
+			
+				if(lflag[2]&&tflag[7])
+					b27.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][721]RepeatingCrossbow.png"));
+				else 
+					b27.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][721]RepeatingCrossbow.png"));
+
+				if(lflag[2]&&tflag[6])
+					b26.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][856]TitanicHydra.png"));
+				else 
+					b26.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][856]TitanicHydra.png"));
+
+				if(lflag[2]&&tflag[5])
+					b25.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][598]RunaansHurricane.png"));
+				else 
+					b25.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][598]RunaansHurricane.png"));
+
+				if(lflag[2]&&tflag[4])
+					b24.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][232]PhantomDancer.png"));
+				else 
+					b24.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][232]PhantomDancer.png"));
+
+				if(lflag[2]&&tflag[3])
+					b23.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][610]StatikkShiv.png"));
+				else
+					b23.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][610]StatikkShiv.png"));
+
+				if(lflag[2]&&tflag[2])
+					b22.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][635]RapidFirecannon.png"));
+				else 
+					b22.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][635]RapidFirecannon.png"));
+
+		
+		
+
+				if(lflag[3]&&tflag[7])
+					b37.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][913]HandofJustice.png"));
+				else
+					b37.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][913]HandofJustice.png"));
+
+				if(lflag[3]&&tflag[6])
+					b36.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][445]Redemption.png"));
+				else
+					b36.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][445]Redemption.png"));
+
+				if(lflag[3]&&tflag[5])
+					b35.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][845]Hush.png"));
+				else
+					b35.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][845]Hush.png"));
+
+				if(lflag[3]&&tflag[4])
+					b34.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][40]FrozenHeart.png"));
+				else
+					b34.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][40]FrozenHeart.png"));
+				if(lflag[3]&&tflag[3])
+					b33.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][524]SeraphsEmbrace.png"));
+				else
+					b33.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][524]SeraphsEmbrace.png"));
+
+
+	
+					
+				if(lflag[4]&&tflag[7])
+				b47.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][969]IceborneGauntlet.png"));
+				else 
+					b47.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][969]IceborneGauntlet.png"));
+				
+				if(lflag[4]&&tflag[6])
+				b46.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][330]RedBuff.png"));
+				else 
+					b46.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][330]RedBuff.png"));
+
+				if(lflag[4]&&tflag[5])
+				b45.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][28]SwordBreaker.png"));
+				else 
+					b45.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][28]SwordBreaker.png"));
+
+				if(lflag[4]&&tflag[4])
+				b44.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][105]Thornmail.png"));
+				else
+					b44.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][105]Thornmail.png"));
+
+
+				
+				if(lflag[5]&&tflag[7])
+					b57.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][482]Quicksilver.png"));
+				else 
+					b57.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][482]Quicksilver.png"));
+
+				if(lflag[5]&&tflag[6])
+					b56.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][863]Zephyr.png"));
+				else 
+					b56.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][863]Zephyr.png"));
+
+
+				if(lflag[5]&&tflag[5])
+					b55.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][2]DragonsClaw.png"));
+				else 
+					b55.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][2]DragonsClaw.png"));
+
+
+				if(lflag[6]&&tflag[8])
+					b68.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][355]FrozenMallet.png"));
+				else 
+					b68.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][355]FrozenMallet.png"));
+
+
+
+				if(lflag[6]&&tflag[7])
+					b67.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][377]TrapClaw.png"));
+				else 
+					b67.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][377]TrapClaw.png"));
+
+				if(lflag[6]&&tflag[6])
+					b66.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][8]WarmogsArmor.png"));
+				else 
+					b66.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][8]WarmogsArmor.png"));
+
+			}
+		});
+		b7.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][244]GiantsBelt.png"));
+		b7.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+

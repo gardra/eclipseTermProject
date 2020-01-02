@@ -1,0 +1,51 @@
+
+			
+			
+				if(lflag[0]&&tflag[5])
+					b05.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/c/[tftactics.gg][360]Bloodthirster.png"));
+				else 
+					b05.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gc/g[tftactics.gg][360]Bloodthirster.png"));
+
+
+		
+				
+
+				
+				
+			
+		
+				
+			
+				
+				
+				
+			
+			
+				
+				
+				
+		
+		
+		
+
+				
+				
+			
+			
+	
+			
+			
+			
+				
+
+			
+			
+
+			
+
+			
+			}
+		});
+		b7.setImage(SWTResourceManager.getImage(EquipmentTable.class, "/gb/g[tftactics.gg][244]GiantsBelt.png"));
+		b7.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+

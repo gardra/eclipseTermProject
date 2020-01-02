@@ -1,0 +1,135 @@
+package application;
+
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+
+import org.eclipse.swt.events.ShellEvent;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.wb.swt.SWTResourceManager;
+import org.eclipse.swt.graphics.Image;
+
+
+public class EquipmentTable {
+
+
+
+	protected Shell shlEquipmentsTable;
+	protected boolean visible = false;
+	
+	/*protected String[] baseEq  = {"[tftactics.gg][919]BFSword.png", "[tftactics.gg][12]NeedlesslyLargeRod.png", " [tftactics.gg][826]RecurveBow.png"
+			, "[tftactics.gg][220]TearoftheGoddess.png", "[tftactics.gg][70]ChainVest.png","[tftactics.gg][875]NegatronCloak.png",
+			"[tftactics.gg][244]GiantsBelt.png", "[tftactics.gg][626]SparringGloves.png","[tftactics.gg][887]Spatula.png"};
+	
+	protected String[][] comEq= {{"[tftactics.gg][979]Deathblade.png"},
+						{"[tftactics.gg][882]HextechGunblade.png"},
+						{"[tftactics.gg][559]GiantSlayer.png"},
+						{"[tftactics.gg][102]SpearofShojin.png"},
+						{"[tftactics.gg][873]GuardianAngel.png"},
+						{"[tftactics.gg][360]Bloodthirster.png"},
+						{"[tftactics.gg][323]ZekesHerald.png"},
+						{"[tftactics.gg][222]InfinityEdge.png"},
+						{"[tftactics.gg][140]YoumuusGhostblade.png"}
+			
+						
+						};
+	
+8*/
+	
+	/**
+	 * Launch the application.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		try {
+			EquipmentTable window = new EquipmentTable();
+			window.open();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+
+
+	}
+
+	/**
+	 * Open the window.
+	 */
+	public void open() {
+		Display display = Display.getDefault();
+		createContents();
+
+		shlEquipmentsTable.open();
+
+		shlEquipmentsTable.layout();
+		while (!shlEquipmentsTable.isDisposed()) {
+			if (!display.readAndDispatch()) {
+				display.sleep();
+			}
+		}
+		display.dispose();
+
+	}
+
+
+	//set the window dispose or not
+	public void disAppear(){      
+
+		
+		shlEquipmentsTable.setVisible(false); 
+		visible = false;	
+	}
+
+	public void appear()	{
+		
+		shlEquipmentsTable.setVisible(true);
+		visible = true;
+	}
+
+
+	/**
+	 * Create contents of the window.
+	 */
+	protected void createContents() {
+		shlEquipmentsTable = new Shell(SWT.ON_TOP|SWT.RESIZE|SWT.CLOSE);
+		appear();
+		shlEquipmentsTable.addShellListener(new ShellAdapter() {
+
+
+			public void shellClosed(ShellEvent e) {
+				disAppear();
+			
+				e.doit = false; 
+			}
+		});
+		shlEquipmentsTable.setSize(450, 300);
+		shlEquipmentsTable.setText("Equipments Table");
+		shlEquipmentsTable.setLayout(new FillLayout(SWT.HORIZONTAL));
+		
+		Composite composite = new Composite(shlEquipmentsTable, SWT.NONE);
+		composite.setLayout(new GridLayout(1, false));
+		
+		Button btnNewButton = new Button(composite, SWT.NONE);
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDown(MouseEvent e) {
+				
+				
+			}
+		});
+		btnNewButton.setForeground(SWTResourceManager.getColor(SWT.COLOR_TITLE_INACTIVE_FOREGROUND));
+		btnNewButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
+		btnNewButton.setImage(Image(display,"/EquipmentTable/"+baseEq[0]));
+
+	}
+}
